@@ -1,19 +1,22 @@
-import React ,{Component} from 'react';
+import React ,{Component , useState} from 'react';
 import './App.css';
 import Parent from './Parent'
+import ContextValue from './ContextValue'
 
 
-let value = 23;
-class App extends Component{
-  render(){
+
+function App(){
+  let value=useState(48)
     return (
-      <div className="App">
-        Heloog
-        <Parent value={value} />
-      </div>
+      <ContextValue.Provider value={value}>
+        <div className="App">
+          Heloog
+          <Parent />
+        </div>
+      </ContextValue.Provider>  
     );
-  }
-    
 }
+    
+ 
 
 export default App;

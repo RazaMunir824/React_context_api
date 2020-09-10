@@ -1,11 +1,15 @@
 
 
 import React from 'react';
+import ContextValue from './ContextValue'
 
-const Child = (props) => {
+
+function Child(){
+	 let value  = React.useContext(ContextValue)
   return (
     <div>
-     child classs {props.value}
+     child classs {value[0]}
+     <button onClick={() => {value[1](++value[0])} } >Update</button>
     </div>
   );
 }
